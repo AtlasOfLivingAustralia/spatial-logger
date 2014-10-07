@@ -1,0 +1,13 @@
+language: java
+jdk:
+- oraclejdk7
+branches:
+  only:
+  - master
+before_script:
+- mkdir -p ~/.m2; wget -q -O ~/.m2/settings.xml https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_maven_settings.xml
+script: mvn clean install deploy
+env:
+  global:
+  - secure: knaztmx4W5WCscbby7QdpJRhgStbzh4rvWbg+/LNuAkjoscOivJfN0aHj/tyIeCeomkku7MMBk5CsL+e9TZxMxbQ5QvvpcApZRoXVEwE17rEZj+bmjVWJoGzK6lKeQUb7Wo5ClC0vlHNGbWI6UR11bRYg/FVEFBpBO25/cVG5ac=
+  - secure: DNY1gWwCMmNiBQv+LawVY9VrQjDZ1l0H+RTb2u/L0luFH8Il34Fj3yqDtK/sdwt9Q+qUkaoy/ajI3LUT0giEll70TvgZIacv5QPFbfinAgTDYQaa5yRdj79GgRT4NyaRUACVqEjQDMiZYrzl6FiJ7dA+f6C4mh5/4+B7vwF+5dg=
